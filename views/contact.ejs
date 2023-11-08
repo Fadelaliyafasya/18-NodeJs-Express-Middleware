@@ -1,0 +1,23 @@
+<!-- Ini adalah judul halaman "Daftar Kontak" yang ditampilkan di tengah atau di sebelah kiri layar, tergantung pada resolusi layar -->
+<h1 class="container mx-auto px-4 lg:max-w-7xl py-24 text-center md:text-left">
+  Daftar Kontak
+</h1>
+
+<!-- Ini adalah blok template EJS yang digunakan untuk mengecek apakah daftar kontak kosong -->
+<% if (isEmpty) { %>
+  <!-- Jika daftar kontak kosong, tampilkan pesan "Contact Tidak Tersedia!!" -->
+  <h3 class="container mx-auto px-4 lg:max-w-7xl py-24 text-center md:text-left">
+    Contact Tidak Tersedia!!
+  </h3>
+<% } else { %>
+  <!-- Jika daftar kontak tidak kosong, tampilkan daftar kontak dalam bentuk daftar ul -->
+  <ul>
+    <!-- Iterasi melalui daftar kontak menggunakan forEach -->
+    <% contacts.forEach(contact => { %>
+      <!-- Untuk setiap kontak, tampilkan nama dan nomor HP dalam elemen li -->
+      <li><h6>Nama: <%= contact.nama %></h6></li>
+      <li><h6>Nomor HP: <%= contact.mobile %></h6></li>
+      <br />
+    <% }); %>
+  </ul>
+<% } %>
