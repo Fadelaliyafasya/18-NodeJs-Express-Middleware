@@ -9,7 +9,6 @@ const port = 3000; // alamat port
 // Mengatur view engine menggunakan EJS
 app.set("view engine", "ejs");
 
-// Menggunakan modul express-ejs-layouts untuk layout
 app.use(expressLayouts);
 
 app.use(express.static("public"));
